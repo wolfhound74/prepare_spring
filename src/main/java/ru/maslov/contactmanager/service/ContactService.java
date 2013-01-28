@@ -1,11 +1,13 @@
 package ru.maslov.contactmanager.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ru.maslov.contactmanager.dao.ContactDAOImpl;
 import ru.maslov.contactmanager.domain.Contact;
 
 import java.util.List;
 
+@Service
 public class ContactService implements IContactService {
 
     @Autowired
