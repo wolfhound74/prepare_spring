@@ -9,7 +9,9 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/spring/applicationContext.xml</param-value>
+        <param-value>
+            WEB-INF/spring/applicationContext.xml
+        </param-value>
     </context-param>
     
     <listener>
@@ -22,7 +24,7 @@
         <load-on-startup>1</load-on-startup>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>WEB-INF/spring/appServlet</param-value>
+            <param-value>WEB-INF/spring/appServlet/servlet-context.xml</param-value>
         </init-param>
     </servlet>
 
