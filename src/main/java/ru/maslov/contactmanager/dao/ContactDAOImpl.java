@@ -3,10 +3,12 @@ package ru.maslov.contactmanager.dao;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import ru.maslov.contactmanager.domain.Contact;
 
 import java.util.List;
 
+@Repository
 public class ContactDAOImpl implements ContactDAO {
 
     @Autowired
