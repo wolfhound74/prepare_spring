@@ -16,5 +16,4 @@ public class ContactController {
         model.addAttribute("lastName", "Maslov");
         return "hello/index";
     }
-
 }
