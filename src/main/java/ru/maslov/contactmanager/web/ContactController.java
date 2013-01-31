@@ -14,6 +14,7 @@ public class ContactController {
         System.out.println("------------------");
         model.addAttribute("firstName", "Vladimir");
         model.addAttribute("lastName", "Maslov");
+        System.out.println("--------");
         return "hello/index";
     }
 }
