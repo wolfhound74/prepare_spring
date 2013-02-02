@@ -27,6 +27,18 @@ public class Contact {
     @Column(name = "phone")
     private String telephone;
 
+    public Contact(String firstname, String lastname, String email, String telephone) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.telephone = telephone;
+    }
+
+    public Contact(String firstname, String lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
     // Getters and setters
 
     public Integer getId() {
