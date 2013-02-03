@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import ru.maslov.contactmanager.domain.Contact;
 
+import java.util.List;
+
 @Repository
 public class ContactDao {
     @Autowired
@@ -16,5 +18,9 @@ public class ContactDao {
 
     public Contact getContact(Long id) {
         return (Contact) sessionFactory.getCurrentSession().get(Contact.class, id);
+    }
+
+    public List<Contact> list() {
+        return sessionFactory.getCurrentSession().createQuery("from Contact").list();
     }
 }

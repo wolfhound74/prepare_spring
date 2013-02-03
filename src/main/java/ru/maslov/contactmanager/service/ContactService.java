@@ -6,6 +6,8 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.maslov.contactmanager.dao.ContactDao;
 import ru.maslov.contactmanager.domain.Contact;
 
+import java.util.List;
+
 @Service
 public class ContactService {
     @Autowired
@@ -14,5 +16,10 @@ public class ContactService {
     @Transactional
     public void addContact(Contact contact) {
         contactDAO.addContact(contact);
+    }
+
+    @Transactional
+    public List<Contact> list() {
+        return contactDAO.list();
     }
 }

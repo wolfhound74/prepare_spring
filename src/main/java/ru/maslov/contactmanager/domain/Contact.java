@@ -1,10 +1,6 @@
 package ru.maslov.contactmanager.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "contacts")
@@ -16,10 +12,10 @@ public class Contact {
     private Integer id;
 
     @Column(name = "first_name")
-    private String firstname;
+    private String firstName;
 
     @Column(name = "last_name")
-    private String lastname;
+    private String lastName;
 
     @Column(name = "email")
     private String email;
@@ -27,16 +23,19 @@ public class Contact {
     @Column(name = "phone")
     private String telephone;
 
-    public Contact(String firstname, String lastname, String email, String telephone) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public Contact(String firstName, String lastName, String email, String telephone) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.telephone = telephone;
     }
 
-    public Contact(String firstname, String lastname) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public Contact(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public Contact() {
     }
 
     // Getters and setters
@@ -49,20 +48,20 @@ public class Contact {
         this.id = id;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstname) {
+        this.firstName = firstname;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastname) {
+        this.lastName = lastname;
     }
 
     public String getEmail() {
