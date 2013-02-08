@@ -23,4 +23,12 @@ public class ContactDao {
     public List<Contact> list() {
         return sessionFactory.getCurrentSession().createQuery("from Contact").list();
     }
+
+    public void delete(Contact contact) {
+          sessionFactory.getCurrentSession().delete(contact);
+    }
+
+    public void delete(Long id) {
+        delete(getContact(id));
+    }
 }

@@ -14,12 +14,17 @@ public class ContactService {
     private ContactDao contactDAO;
 
     @Transactional
-    public void addContact(Contact contact) {
+    public void save(Contact contact) {
         contactDAO.addContact(contact);
     }
 
     @Transactional
     public List<Contact> list() {
         return contactDAO.list();
+    }
+
+    @Transactional
+    public void delete(Long id) {
+        contactDAO.delete(id);
     }
 }
