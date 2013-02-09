@@ -1,8 +1,9 @@
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ page contentType="text/html; charset=utf-8" %>
+<%@ taglib prefix="sring" uri="http://www.springframework.org/tags" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script src="<sring:url value='/js/contact/actions.js'/>" type="text/javascript"></script>
 
 <html>
 <head>
@@ -12,7 +13,7 @@
 <a href="${createController}">Создать</a>
 
 <c:forEach items="${contactList}" var="contact">
-    <p>${contact.firstName} ${contact.lastName}</p>
+    <p>${contact.firstName} ${contact.lastName} <span class="deleteContact">(Удалить)</span></p>
 </c:forEach>
 
 <form action="/contact/create" method="post">
