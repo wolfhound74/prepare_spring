@@ -25,10 +25,14 @@ public class ContactDao {
     }
 
     public void delete(Contact contact) {
-          sessionFactory.getCurrentSession().delete(contact);
+        sessionFactory.getCurrentSession().delete(contact);
     }
 
     public void delete(Long id) {
-        delete(getContact(id));
+//        delete(getContact(id));
+        org.hibernate.Query query = sessionFactory.getCurrentSession().createQuery("delete from Contact where id=:id");
+        query.setLong("id", id);
+        int c = query.executeUpdate();
+        System.out.println(c);
     }
 }

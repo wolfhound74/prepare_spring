@@ -41,7 +41,7 @@ public class ContactController {
         return new ModelAndView("list", model);
     }
 
-    @RequestMapping(value = "/delete")
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public String delete(Long id) {
         contactService.delete(id);
         return "redirect:/contact/list";
