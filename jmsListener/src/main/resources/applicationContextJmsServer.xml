@@ -26,7 +26,7 @@
     <bean id="jmsConsumerConnectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory"
           depends-on="broker" p:targetConnectionFactory-ref="jmsFactory"/>
 
-    <bean id="jmsListener" class="ru.maslov.contactmanager.service.jms.JmsMessageListener"/>
+    <bean id="jmsListener" class="ru.maslov.jms.MyJmsMessageListener"/>
 
     <jms:listener-container container-type="default" connection-factory="jmsConsumerConnectionFactory"
                             acknowledge="auto">
