@@ -4,10 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>prepare_spring</groupId>
+    <groupId>spring</groupId>
     <artifactId>prepare_spring</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
+    <modules>
+        <module>mainModule</module>
+        <module>untitled</module>
+        <module>jmsListener</module>
+    </modules>
 
     <properties>
         <spring.version>3.2.0.RELEASE</spring.version>
@@ -64,6 +69,11 @@
             <artifactId>spring-test</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jms</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
 
         <!-- Hibernate -->
         <dependency>
@@ -110,6 +120,18 @@
             <version>${apache.tiles.version}</version>
         </dependency>
 
+        <!-- Active MQ -->
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-all</artifactId>
+            <version>5.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.xbean</groupId>
+            <artifactId>xbean-spring</artifactId>
+            <version>3.6</version>
+        </dependency>
+
         <!-- for tests -->
         <dependency>
             <groupId>org.mockito</groupId>
@@ -140,7 +162,7 @@
                 <configuration>
                     <changeLogFile>src/main/resources/changelog.xml</changeLogFile>
                     <driver>com.mysql.jdbc.Driver</driver>
-                    <url>jdbc:mysql://127.0.0.1/contactmanager</url>
+                    <url>jdbc:mysql://127.0.0.1/ru.maslov.contactmanager</url>
                     <username>root</username>
                     <password>root</password>
                 </configuration>
