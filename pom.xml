@@ -10,7 +10,6 @@
     <version>1.0</version>
     <modules>
         <module>mainModule</module>
-        <module>untitled</module>
         <module>jmsListener</module>
     </modules>
 
