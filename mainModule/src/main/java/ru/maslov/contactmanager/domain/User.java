@@ -3,8 +3,8 @@ package ru.maslov.contactmanager.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "contacts")
-public class Contact {
+@Table(name = "users")
+public class User {
 
     @Id
     @Column(name = "id")
@@ -23,19 +23,19 @@ public class Contact {
     @Column(name = "phone")
     private String telephone;
 
-    public Contact(String firstName, String lastName, String email, String telephone) {
+    public User(String firstName, String lastName, String email, String telephone) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.telephone = telephone;
     }
 
-    public Contact(String firstName, String lastName) {
+    public User(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public Contact() {
+    public User() {
     }
 
     // Getters and setters

@@ -4,8 +4,8 @@
 
     <include file="/" relativeToChangelogFile="true"/>
 
-    <changeSet author="wolfhound" id="02.02.2013 20:00">
-        <createTable tableName="contacts">
+    <changeSet author="wolfhound" id="25.02.2013 00:01">
+        <createTable tableName="users">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true"/>
             </column>

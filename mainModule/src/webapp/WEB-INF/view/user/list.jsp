@@ -4,21 +4,21 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<script src="<sring:url value='/js/contact/actions.js'/>" type="text/javascript"></script>
+<script src="<sring:url value='/js/user/actions.js'/>" type="text/javascript"></script>
 
 <html>
 <head>
     <title></title>
 </head>
 <body>
-<a href="${createController}">Создать</a>
+<%--<a href="${createController}">Создать</a>--%>
 
-<c:forEach items="${contactList}" var="contact">
-    <p>${contact.firstName} ${contact.lastName}<span
-            class="deleteContact {id: ${contact.id}}">(Удалить)</span></p>
+<c:forEach items="${userList}" var="user">
+    <p>${user.firstName} ${user.lastName}<span
+            class="deleteContact {id: ${user.id}}">(Удалить)</span></p>
 </c:forEach>
 
-<form action="/contact/create" method="post">
+<form action="/user/create" method="post">
     <label name="firstName">
         Имя
     </label>

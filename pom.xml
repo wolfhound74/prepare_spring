@@ -179,7 +179,7 @@
                 <configuration>
                     <changeLogFile>src/main/resources/changelog.xml</changeLogFile>
                     <driver>com.mysql.jdbc.Driver</driver>
-                    <url>jdbc:mysql://127.0.0.1/ru.maslov.contactmanager</url>
+                    <url>jdbc:mysql://127.0.0.1/contactmanager</url>
                     <username>root</username>
                     <password>root</password>
                 </configuration>

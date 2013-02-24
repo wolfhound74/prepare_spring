@@ -4,9 +4,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.web.servlet.ModelAndView;
-import ru.maslov.contactmanager.domain.Contact;
-import ru.maslov.contactmanager.service.ContactService;
-import ru.maslov.contactmanager.web.ContactController;
+import ru.maslov.contactmanager.domain.User;
+import ru.maslov.contactmanager.service.UserService;
+import ru.maslov.contactmanager.web.UserController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,26 +17,26 @@ import static org.mockito.Mockito.when;
 
 public class ContactControllerTest extends AbstractControllerTest {
 
-    private ContactService contactService;
-    private final List<Contact> contactList = new ArrayList<Contact>();
+    private UserService userService;
+    private final List<User> userList = new ArrayList<User>();
 
     @Before
     public void init() {
-        Contact contact = new Contact("Владимир", "Маслов");
-        contactList.add(contact);
+        User user = new User("Владимир", "Маслов");
+        userList.add(user);
     }
 
     @Test
     public void test_list() {
-        contactService = mock(ContactService.class);
+        userService = mock(UserService.class);
 
-        when(contactService.list()).thenReturn(contactList);
+        when(userService.list()).thenReturn(userList);
 
-        ContactController controller = new ContactController();
-        ReflectionTestUtils.setField(controller, "contactService", contactService);
+        UserController controller = new UserController();
+        ReflectionTestUtils.setField(controller, "contactService", userService);
 
         ModelAndView result = controller.list();
         assertEquals("list", result.getViewName());
-        assertEquals(contactList, result.getModel().get("contactList"));
+        assertEquals(userList, result.getModel().get("userList"));
     }
 }
